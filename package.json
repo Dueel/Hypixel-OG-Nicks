@@ -6,8 +6,10 @@
   "bin": "dist/index.js",
   "scripts": {
     "build": "tsc --diagnostics",
-    "start": "node dist/index.js",
-    "compile": "pkg --compress GZip --public ."
+    "compile": "pkg --compress GZip --public .",
+    "format": "prettier --write . && eslint --ext .ts --fix --format=pretty src",
+    "lint": "prettier --check . && eslint --ext .ts --format=pretty src",
+    "start": "node dist/index.js"
   },
   "keywords": [],
   "author": "",
