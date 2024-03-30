@@ -1,0 +1,6 @@
+config.json
+node_modules/
+pnpm-lock.yaml
+dist/
+builds/
+.minecraft/
