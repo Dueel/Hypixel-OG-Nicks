@@ -3,10 +3,10 @@
 	"version": "1.0.0",
 	"description": "",
 	"main": "dist/index.js",
-	"bin": "dist/index.js",
+	"bin": "./dist/index.js",
 	"scripts": {
 		"build": "tsc --diagnostics",
-		"compile": "pkg --compress GZip --public .",
+		"compile": "npm run build && pkg --compress GZip --public .",
 		"format": "prettier --write . && eslint --ext .ts --fix --format=pretty src",
 		"lint": "prettier --check . && eslint --ext .ts --format=pretty src",
 		"start": "node dist/index.js"
@@ -25,15 +25,15 @@
 		"@types/node": "20.11.30",
 		"@types/node-cron": "^3.0.11",
 		"@typescript-eslint/parser": "^7.3.1",
+		"@yao-pkg/pkg": "^5.11.5",
 		"eslint": "^8.53.0",
 		"eslint-config-neon": "^0.1.57",
 		"eslint-formatter-pretty": "^5.0.0",
-		"pkg": "^5.8.1",
 		"prettier": "^3.2.5",
 		"typescript": "^5.4.2"
 	},
 	"pkg": {
-		"assets": "dist/**/*",
+		"scripts": "dist/**/*.js",
 		"targets": [
 			"node18-win-x64",
 			"node18-linux-x64",
