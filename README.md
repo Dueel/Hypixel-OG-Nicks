@@ -9,6 +9,9 @@ A mineflayer bot to get OG nicks on Hypixel.
 
 2. Open a terminal and and navigate to the directory where the binary is located (e.g. `cd ~/Downloads`).
 
-3. Run the binary with the following command: `./hypixel-og-nicks`.
+3. Run the binary with the command based on your OS: 
+Windows:`./nick-bot-win`
+Linux: `./nick-bot-linux`
+MacOS: `./nick-bot-macos`
 
 4. Follow the instructions in the terminal.
