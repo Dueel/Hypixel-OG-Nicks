@@ -2,9 +2,11 @@ name: Release
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    tags:
+      - 'v*.*.*'
+
+permissions:
+  contents: write
 
 jobs:
   build:
@@ -12,13 +14,13 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [18.x]
+        node-version: [22.x]
 
     steps:
     - uses: actions/checkout@v4
 
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
 
@@ -28,7 +30,8 @@ jobs:
         npm run compile
 
     - name: Release
-      uses: actions/upload-artifact@v4
-      with: 
-        name: release
-        path: builds/**
+      uses: softprops/action-gh-release@v2
+      with:
+        files: builds/**
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
