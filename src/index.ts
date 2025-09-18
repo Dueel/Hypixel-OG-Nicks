@@ -21,7 +21,7 @@ class NickBot {
 		username: 'Nick',
 		auth: 'microsoft',
 		hideErrors: true,
-		version: '1.20.1',
+		version: '1.8.9',
 		profilesFolder: './.minecraft',
 		viewDistance: 'tiny',
 		onMsaCode(data) {
