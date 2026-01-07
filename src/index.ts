@@ -79,7 +79,7 @@ class NickBot {
 			});
 
 			NickBot.runNickCommand(this.bot);
-			NickBot.randomMovement(this.bot);
+			// NickBot.randomMovement(this.bot); // Disabled for now
 		});
 
 		this.bot.on('spawn', async () => {
@@ -226,7 +226,7 @@ class NickBot {
 				await this.runSetNickCommand(bot, this.nick);
 				this.disconnect(bot, 'Nick');
 			}
-		}, 7_000);
+		}, 1_500);
 	}
 
 	private static async runSetNickCommand(bot: Bot, nick: string) {
