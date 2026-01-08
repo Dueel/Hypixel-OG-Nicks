@@ -261,7 +261,7 @@ class NickBot {
 			return true;
 		}
 
-		return nick.startsWith('__') || nick.endsWith('__');
+		return nick.startsWith('_') || nick.endsWith('_');
 	}
 }
 
